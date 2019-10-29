@@ -11,11 +11,19 @@ class CocktailsListContainer extends React.Component {
     });
   };
 
+  deleteCocktail = id => {
+    this.props.dispatch({
+      type: "DELETE_COCKTAIL",
+      payload: id
+    });
+  };
+
   render() {
     return (
       <CocktailsList
         cocktails={this.props.cocktails}
         selectCocktail={this.selectCocktail}
+        deleteCocktail={this.deleteCocktail}
       />
     );
   }

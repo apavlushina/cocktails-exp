@@ -1,5 +1,9 @@
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case "DELETE_COCKTAIL":
+      return [...state].filter(
+        cocktail => !cocktail.id.includes(action.payload)
+      );
     default:
       return state;
   }

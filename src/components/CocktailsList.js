@@ -10,7 +10,10 @@ export default function CocktailsList(props) {
             key={cocktail.id}
             onClick={() => props.selectCocktail(cocktail.id)}
           >
-            {cocktail.drink}
+            {cocktail.drink}, {cocktail.glass}
+            <button onClick={() => props.deleteCocktail(cocktail.id)}>
+              Delete me
+            </button>
           </li>
         ))}
       </ul>
